@@ -77,12 +77,64 @@ Although a Gunn oscillator can be amplitude-modulated with the bias voltage, a s
 
 ## Observation
 
-*(Include your own table relevant to the experiment.)*
+Operating Parameters:
+
+Resonant Frequency: 9.45 GHz
+
+Modulating Signal: 1 kHz Square Wave
+
+Material / Type: n-GaAs Gunn Diode
+
+Table 1: V-I Characteristics of Gunn Diode
+
+|S.No | Gunn Bias Voltage V (V) | Diode Current I (mA) | Region of Operation |
+|---|---|---|---|
+1 | 0.5 | 45 | Linear / Ohmic Region
+2 | 1.0 | 95 | Linear / Ohmic Region
+3 | 1.5 | 148 | Linear / Ohmic Region
+4 | 2.0 | 198 | Linear / Ohmic Region
+5 | 2.5 | 240 | Linear / Ohmic Region
+6 | 3.0 | 275 | Approaching Threshold
+7 | 3.4 (Vth) | 295 (Ipeak) | Threshold Point (Peak)
+8 | 3.8 | 278 | Negative Differential Resistance (NDR)
+9 | 4.2 | 255 | Negative Differential Resistance (NDR)
+10 | 4.8 | 225 | Negative Differential Resistance (NDR)
+11 | 5.5 | 195 | Negative Differential Resistance (NDR)
+12 | 6.2 | 172 | Negative Differential Resistance (NDR)
+13 | 7.0 | 158 | Negative Differential Resistance (NDR)
+14 | 8.0 (Vop) | 150 (Ivalley) | Stable Oscillation Point (Valley)
+15 | 8.5 | 152 | Saturation / Post-Valley Region
+
+Table 2: PIN Diode Modulation Depth
+
+| State | Attenuator Position (mm) | SWR / Power Meter Reading (dB) | Oscilloscope Peak Voltage (Vp-p)|
+|---|---|---|---|
+ON State (Wave Top) | 3.25 mm | 34.2 dB | 1.85 V
+OFF State (Wave Base) | 1.10 mm | 18.6 dB | 0.31 V
 
 ## Calculation
 
-*(Include your own calculation relevant to the experiment.)*
+Negative Differential Resistance (Rn)
+The dynamic negative resistance is computed across the active region from the threshold point (Vth, Ipeak) to the valley operating point (Vop, Ivalley):
 
+Delta V = Vop - Vth = 8.0 V - 3.4 V = 4.6 V
+Delta I = Ivalley - Ipeak = 150 mA - 295 mA = -145 mA = -0.145 A
+
+Rn = Delta V / Delta I = 4.6 V / (-0.145 A) = -31.72 Ohms
+
+Peak-to-Valley Current Ratio (PVCR)
+PVCR = Ipeak / Ivalley = 295 mA / 150 mA = 1.97
+
+Depth of Modulation of PIN Diode
+
+Method A: Decibel Method (from VSWR / Power Meter)
+Depth of Modulation (dB) = Reading_ON - Reading_OFF
+Depth of Modulation = 34.2 dB - 18.6 dB = 15.6 dB
+
+Method B: Percentage Modulation Method (from CRO trace)
+m = [(Vmax - Vmin) / (Vmax + Vmin)] * 100%
+m = [(1.85 - 0.31) / (1.85 + 0.31)] * 100%
+m = (1.54 / 2.16) * 100% = 71.30%
 ## Precautions
 
 * Check the connections before switching on the kit.
@@ -91,4 +143,11 @@ Although a Gunn oscillator can be amplitude-modulated with the bias voltage, a s
 
 ## Conclusion
 
-*(Write your own.)*
+CONCLUSION
+The current-voltage (V-I) characteristics of the Gunn diode were studied. The device demonstrated Ohmic behavior up to the threshold voltage Vth = 3.4 V with a peak current Ipeak = 295 mA.
+
+Beyond the threshold, the diode demonstrated the transferred-electron (Gunn) effect, displaying negative differential resistance (Rn = -31.72 Ohms) with a Peak-to-Valley Current Ratio (PVCR) of 1.97.
+
+Stable microwave oscillations were established at the recommended operating bias of Vbias = 8.0 V.
+
+The modulation depth of the PIN diode modulator was determined to be 15.6 dB (or 71.30%), confirming effective square-wave amplitude modulation of the X-band carrier.
